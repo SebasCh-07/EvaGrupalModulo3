@@ -5,7 +5,6 @@ export const insertarRutas = ({ navigation }) => {
     const [txtCajadeTexto1, setTxtCajadeTexto1] = useState('');
     const [txtCajadeTexto2, setTxtCajadeTexto2] = useState('');
     const [txtCajadeTexto3, setTxtCajadeTexto3] = useState('');
-    const [txtCajadeTexto4, setTxtCajadeTexto4] = useState('');
     const [txtCajadeTexto5, setTxtCajadeTexto5] = useState('');
     return <View StyleSheet={styles.container}>
         <View style={styles.container}></View>
@@ -28,18 +27,16 @@ export const insertarRutas = ({ navigation }) => {
             onChangeText={setTxtCajadeTexto3}
         />
         <TextInput
-            placeholder='Horario Salida'
-            style={styles.Input}
-            value={txtCajadeTexto4}
-            onChangeText={setTxtCajadeTexto4}
-        />
-        <TextInput
             placeholder='Bus'
             style={styles.Input}
             value={txtCajadeTexto5}
             onChangeText={setTxtCajadeTexto5}
         />
-        <Button title='Enviar'
+        <Button 
+        title='Enviar'
+        onPress={() => {
+            navigation.navigate("Ruta");
+        }}
         />
     </View>
 
