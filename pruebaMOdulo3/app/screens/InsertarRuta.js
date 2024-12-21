@@ -35,7 +35,6 @@ export const insertarRutas = ({ navigation }) => {
         <Button 
         title='Enviar'
         onPress={() => {
-            navigation.navigate("Ruta");
         }}
         />
     </View>
