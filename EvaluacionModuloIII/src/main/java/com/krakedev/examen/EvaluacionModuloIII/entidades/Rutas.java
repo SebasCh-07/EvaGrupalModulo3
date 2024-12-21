@@ -6,13 +6,13 @@ public class Rutas {
 	private String codigoR;
 	private String origen;
 	private String destino;
-	private String horarioSalida;
+	private Date horarioSalida;
 	private BUSES bus;
 	
 	public Rutas () {
 		
 	}
-	public Rutas(String codigoR, String origen, String destino, String horarioSalida, BUSES bus) {
+	public Rutas(String codigoR, String origen, String destino, Date horarioSalida, BUSES bus) {
 		super();
 		this.codigoR = codigoR;
 		this.origen = origen;
@@ -38,10 +38,10 @@ public class Rutas {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	public String getHorarioSalida() {
+	public Date getHorarioSalida() {
 		return horarioSalida;
 	}
-	public void setHorarioSalida(String horarioSalida) {
+	public void setHorarioSalida(Date horarioSalida) {
 		this.horarioSalida = horarioSalida;
 	}
 	public BUSES getBus() {
