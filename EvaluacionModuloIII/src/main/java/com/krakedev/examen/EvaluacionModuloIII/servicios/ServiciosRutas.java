@@ -2,7 +2,9 @@ package com.krakedev.examen.EvaluacionModuloIII.servicios;
 
 import java.util.ArrayList;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -23,6 +25,21 @@ public class ServiciosRutas {
 		try {
 			rutas = rutaBDD.recuperarRutas();
 			return Response.ok(rutas).build();
+		} catch (KrakeException e) {
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
+	}
+	
+	@Path("registrar")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response insertar (Rutas ruta) {
+		System.out.println(">>>>>>" + ruta);
+		RutasBDD ru = new RutasBDD();
+		try {
+			ru.insertar(ruta);
+			return Response.ok().build();
 		} catch (KrakeException e) {
 			e.printStackTrace();
 			return Response.serverError().build();

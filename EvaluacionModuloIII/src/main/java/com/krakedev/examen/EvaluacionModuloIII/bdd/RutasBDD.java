@@ -1,12 +1,12 @@
 package com.krakedev.examen.EvaluacionModuloIII.bdd;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.krakedev.examen.EvaluacionModuloIII.entidades.BUSES;
 import com.krakedev.examen.EvaluacionModuloIII.entidades.Rutas;
@@ -45,7 +45,7 @@ public class RutasBDD {
 				
 				String sd = sdf.format(horarioSalida);
 
-				ruta = new Rutas(codigoR, origen, destino, sd, bus);
+				ruta = new Rutas(codigoR, origen, destino, horarioSalida, bus);
 				rutas.add(ruta);
 			}
 		} catch (KrakeException e) {
@@ -56,5 +56,39 @@ public class RutasBDD {
 			throw new KrakeException("Error al consultar. Detalle" + e.getMessage());
 		}
 		return rutas;
+	}
+	public void insertar (Rutas ruta) throws KrakeException {
+		Connection con = null;
+
+
+		Date fechaAtual = new Date();
+		java.sql.Date fechaSQL = new java.sql.Date(fechaAtual.getTime());
+		try {
+			con = ConexionBDD.obtenerConexion();
+			PreparedStatement ps = con.prepareStatement("insert into rutas (codigoR, origen, destino, horario_salida, bus) "
+					+ "values(?, ?, ?, ?, ?);");
+			ps.setString(1, ruta.getCodigoR());
+			ps.setString(2, ruta.getOrigen());
+			ps.setString(3, ruta.getDestino());
+			ps.setDate(4, fechaSQL);
+			ps.setString(5, ruta.getBus().getIdBUS());
+			
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new KrakeException("Error al insertar el la ruta. Detalle" + e.getMessage());
+		} catch (KrakeException e) {
+			throw e;
+		} finally {
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
 	}
 }
