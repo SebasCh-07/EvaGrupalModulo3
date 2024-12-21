@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {Ruta} from './app/screens/rutaScreen'
 import {insertarRutas} from './app/screens/InsertarRuta'
+import {BusesScreen} from './app/screens/insertarBuses'
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Ruta} />
       <Stack.Screen name="insertarRutas" component={insertarRutas} />
+      <Stack.Screen name="InsertarBuses" component={insertarRutas} />
     </Stack.Navigator>
   </NavigationContainer>
   );

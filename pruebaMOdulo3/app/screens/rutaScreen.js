@@ -14,7 +14,7 @@ export const Ruta = ({ navigation }) => {
             <TouchableOpacity
                 style={styles.boton}
                 onPress={() => {
-                    navigation.navigate("Contacts");
+                    navigation.navigate("InsertarBuses");
                 } }
             >
                 <Text style={styles.textoBoton}>Buses</Text>
