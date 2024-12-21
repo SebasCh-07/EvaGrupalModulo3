@@ -2,7 +2,7 @@ import { View, StyleSheet, TextInput, Alert } from 'react-native'
 import { Button, Text } from '@rneui/base'
 import { useState } from 'react'
 
-export const PostForm = () => {
+export const BusesScreen = () => {
     const [txtCajadeTexto1, setTxtCajadeTexto1] = useState('');
     const [txtCajadeTexto2, setTxtCajadeTexto2] = useState('');
     return <View StyleSheet={styles.container}>
@@ -24,14 +24,10 @@ export const PostForm = () => {
         <FAB
             title="+"
             placement='right'
-            onPress={() => (navigation.navigate("GradeFormNav", { notita: null, fnRefresh: refresh }))}
         />
     </View>
 
 }
-
-
-
 
 
 const styles = StyleSheet.create({
