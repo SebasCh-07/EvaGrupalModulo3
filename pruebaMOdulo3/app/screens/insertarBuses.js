@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, FlatList, TouchableHighlight, TextInput,Alert} from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableHighlight, TextInput, Alert } from 'react-native';
 import { useState } from 'react';
 import { FAB } from '@rneui/themed';
 import { Input, Button } from '@rneui/base'
-import {servicioCrearBus} from './services/TestServices'
+import { servicioCrearBus } from './services/TestServices'
 
 export const BusesScreen = () => {
     const [bus, setBus] = useState();
@@ -10,19 +10,19 @@ export const BusesScreen = () => {
 
     const createService = () => {
         servicioCrearBus({
-                idBUS: bus,
-                capMax: capacidad
+            idBUS: bus,
+            capMax: capacidad
         },
-        () => {
-            Alert.alert("CONFIRMACIÓN","SE HA INGRESADO EL NUEVO POST")
-        });
+            () => {
+                Alert.alert("CONFIRMACIÓN", "SE HA INGRESADO EL NUEVO POST")
+            });
     }
-    
+
     return <View StyleSheet={styles.container}>
         <View style={styles.container}></View>
         <Input
             value={bus}
-            onChangeText={(value)=>{
+            onChangeText={(value) => {
                 setBus(value)
             }}
             placeholder='Codigo Bus'
@@ -30,7 +30,7 @@ export const BusesScreen = () => {
         />
         <Input
             value={capacidad}
-            onChangeText={(value)=>{
+            onChangeText={(value) => {
                 setCapacidad(value)
             }}
             placeholder='Max Pasajeros'
@@ -40,6 +40,7 @@ export const BusesScreen = () => {
         <Button title='Enviar'
             onPress={createService}
         />
+
     </View>
 
 }
