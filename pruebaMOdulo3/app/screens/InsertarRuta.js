@@ -7,13 +7,31 @@ export const insertarRutas = ({ navigation }) => {
     return <View StyleSheet={styles.container}>
         <View style={styles.container}></View>
         <TextInput
-            placeholder='Codigo Bus'
+            placeholder='Codigo'
             style={styles.Input}
             value={txtCajadeTexto1}
             onChangeText={setTxtCajadeTexto1}
         />
         <TextInput
-            placeholder='Max Pasajeros'
+            placeholder='Origen'
+            style={styles.Input}
+            value={txtCajadeTexto2}
+            onChangeText={setTxtCajadeTexto2}
+        />
+        <TextInput
+            placeholder='Destino'
+            style={styles.Input}
+            value={txtCajadeTexto2}
+            onChangeText={setTxtCajadeTexto2}
+        />
+        <TextInput
+            placeholder='Horario Salida'
+            style={styles.Input}
+            value={txtCajadeTexto2}
+            onChangeText={setTxtCajadeTexto2}
+        />
+        <TextInput
+            placeholder='Bus'
             style={styles.Input}
             value={txtCajadeTexto2}
             onChangeText={setTxtCajadeTexto2}
