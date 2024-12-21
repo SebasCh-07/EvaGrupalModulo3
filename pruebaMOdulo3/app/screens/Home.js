@@ -1,29 +1,29 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity, FlatList } from 'react-native';
+import {Ruta} from './rutaScreen'
 
 
-export const Ruta = ({ navigation }) => {
+export const HOME = ({ navigation }) => {
     return (<View style={styles.container}>
         <View style={styles.areaTitulo}>
-            <Text style={styles.titulo}>LISTA RUTAS</Text>
+            <Text style={styles.titulo}>HOME</Text>
         </View>
-
-        <View style={styles.areaContenido}>
-            <FlatList
-
-            />
-        </View>
-
         <View style={styles.areaBotones}>
-
             <TouchableOpacity
                 style={styles.boton}
                 onPress={() => {
-                    navigation.navigate("insertarRutas");
+                    navigation.navigate("Rutas");
                 }}
             >
-                <Text style={styles.textoBoton}>Ingresar ruta</Text>
+                <Text style={styles.textoBoton}>RUTAS</Text>
             </TouchableOpacity>
-
+            <TouchableOpacity
+                style={styles.boton}
+                onPress={() => {
+                  navigation.navigate("listasBuses");
+              }}
+            >
+                <Text style={styles.textoBoton}>BUSES</Text>
+            </TouchableOpacity>
 
         </View>
     </View>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     },
     areaBotones: {
       flex: 2,
-      flexDirection: 'column',
+      flexDirection: 'row',
       marginBottom: 10,
       justifyContent: 'center',
       alignItems: 'center',

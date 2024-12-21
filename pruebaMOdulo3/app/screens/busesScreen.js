@@ -7,7 +7,7 @@ export const Ruta = ({ navigation }) => {
         </View>
 
         <FlatList
-            
+
         />
 
         <View style={styles.areaBotones}>
@@ -43,10 +43,10 @@ export const Ruta = ({ navigation }) => {
     },
     areaBotones: {
       flex: 2,
-      flexDirection: 'row',
+      flexDirection: 'column',
       marginBottom: 10,
       justifyContent: 'center',
-      alignItems: 'flex-start',
+      alignItems: 'center',
      // backgroundColor: "#ecfcd0",
     },
     titulo: {
