@@ -14,7 +14,7 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Ruta} />
       <Stack.Screen name="insertarRutas" component={insertarRutas} />
-      <Stack.Screen name="InsertarBuses" component={insertarRutas} />
+      <Stack.Screen name="InsertarBuses" component={BusesScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   );

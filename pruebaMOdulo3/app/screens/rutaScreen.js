@@ -17,7 +17,7 @@ export const Ruta = ({ navigation }) => {
                     navigation.navigate("InsertarBuses");
                 } }
             >
-                <Text style={styles.textoBoton}>Buses</Text>
+                <Text style={styles.textoBoton}>Agregar Buses</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.boton}
