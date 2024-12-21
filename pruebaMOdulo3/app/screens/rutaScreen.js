@@ -6,16 +6,18 @@ export const Ruta = ({ navigation }) => {
             <Text style={styles.titulo}>Rutas</Text>
         </View>
 
-        <FlatList
+        <View style={styles.areaContenido}>
+            <FlatList
 
-        />
+            />
+        </View>
 
         <View style={styles.areaBotones}>
             <TouchableOpacity
                 style={styles.boton}
                 onPress={() => {
                     navigation.navigate("InsertarBuses");
-                } }
+                }}
             >
                 <Text style={styles.textoBoton}>Agregar Buses</Text>
             </TouchableOpacity>
@@ -23,7 +25,7 @@ export const Ruta = ({ navigation }) => {
                 style={styles.boton}
                 onPress={() => {
                     navigation.navigate("insertarRutas");
-                } }
+                }}
             >
                 <Text style={styles.textoBoton}>Ingresar ruta</Text>
             </TouchableOpacity>
@@ -31,44 +33,48 @@ export const Ruta = ({ navigation }) => {
     </View>
     );
 }
-  
-  const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      flexDirection: "column",
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: 20
+        flex: 1,
+        backgroundColor: '#fff',
+        flexDirection: "column",
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20
     },
     areaBotones: {
-      flex: 2,
-      flexDirection: 'row',
-      marginBottom: 10,
-      justifyContent: 'center',
-      alignItems: 'flex-start',
-     // backgroundColor: "#ecfcd0",
+        flex: 2,
+        flexDirection: 'row',
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        // backgroundColor: "#ecfcd0",
     },
     titulo: {
-      fontSize: 20,
-      fontWeight: 'bold',
+        fontSize: 20,
+        fontWeight: 'bold',
     },
     areaTitulo: {
-      flex: 1,
-      margin: 10,
-      justifyContent: 'flex-end',
-      alignItems: "center",
-      //backgroundColor: "skyblue"
+        flex: 1,
+        margin: 10,
+        justifyContent: 'flex-end',
+        alignItems: "center",
+        //backgroundColor: "skyblue"
     },
     boton: {
-      backgroundColor: '#4CAF50',
-      padding: 10, 
-      margin: 10,
-      borderRadius: 5, 
+        backgroundColor: '#4CAF50',
+        padding: 10,
+        margin: 10,
+        borderRadius: 5,
     },
     textoBoton: {
-      color: 'white', 
-      textAlign: 'center',
-      fontSize: 16,
-    }
-  });
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 16,
+    },
+    areaContenido: {
+        flex: 6,
+        //backgroundColor: "lightblue",
+      },
+});
