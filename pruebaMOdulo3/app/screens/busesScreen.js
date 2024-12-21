@@ -7,7 +7,7 @@ export const Ruta = ({ navigation }) => {
         </View>
 
         <FlatList
-
+            
         />
 
         <View style={styles.areaBotones}>
