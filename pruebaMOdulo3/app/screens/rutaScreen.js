@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity, FlatList } from 'react-native';
 
+
 export const Ruta = ({ navigation }) => {
     return (<View style={styles.container}>
         <View style={styles.areaTitulo}>
-            <Text style={styles.titulo}>Rutas</Text>
+            <Text style={styles.titulo}>ListasBuses</Text>
         </View>
 
         <View style={styles.areaContenido}>
@@ -29,6 +30,15 @@ export const Ruta = ({ navigation }) => {
             >
                 <Text style={styles.textoBoton}>Ingresar ruta</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.boton}
+                onPress={() => {
+                  navigation.navigate("listasBuses");
+              }}
+            >
+                <Text style={styles.textoBoton}>Buses Disponibles</Text>
+            </TouchableOpacity>
+
         </View>
     </View>
     );
@@ -44,12 +54,12 @@ const styles = StyleSheet.create({
         padding: 20
     },
     areaBotones: {
-        flex: 2,
-        flexDirection: 'row',
-        marginBottom: 10,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        // backgroundColor: "#ecfcd0",
+      flex: 2,
+      flexDirection: 'column',
+      marginBottom: 10,
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+     // backgroundColor: "#ecfcd0",
     },
     titulo: {
         fontSize: 20,
