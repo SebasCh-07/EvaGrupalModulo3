@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, FlatList } from 'reac
 export const Ruta = ({ navigation }) => {
     return (<View style={styles.container}>
         <View style={styles.areaTitulo}>
-            <Text style={styles.titulo}>ListasBuses</Text>
+            <Text style={styles.titulo}>LISTA RUTAS</Text>
         </View>
 
         <View style={styles.areaContenido}>
@@ -14,14 +14,7 @@ export const Ruta = ({ navigation }) => {
         </View>
 
         <View style={styles.areaBotones}>
-            <TouchableOpacity
-                style={styles.boton}
-                onPress={() => {
-                    navigation.navigate("InsertarBuses");
-                }}
-            >
-                <Text style={styles.textoBoton}>Agregar Buses</Text>
-            </TouchableOpacity>
+
             <TouchableOpacity
                 style={styles.boton}
                 onPress={() => {
